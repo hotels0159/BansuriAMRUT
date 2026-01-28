@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  
+  <title>Bansuri Amruttulya Tea Premix | Jaggery Chai & Basundi Tea Powder Online Mumbai</title>
+  <meta name="description" content="Buy Bansuri Amruttulya tea premix, Jaggery tea powder & Basundi chai online. Authentic kadak tapri taste, pure tea, no milk powder. Perfect for home, hotels, cafes & tea stalls in Maharashtra. Order via WhatsApp – low cost per cup."/>
+  <meta name="keywords" content="amruttulya tea premix, jaggery tea powder, basundi tea premix, kadak chai premix, tapri style tea, masala chai powder buy online, amruttulya chai Mumbai, jaggery chaha, bansuri tea wholesale"/>
+  <meta name="robots" content="index, follow"/>
+  
+  <meta property="og:title" content="Bansuri Tea – Asli Kadak Chai ka Swad | Amruttulya, Jaggery, Basundi"/>
+  <meta property="og:description" content="Premium boiled chai premix – pure ingredients, rich aroma, trusted by tea lovers & businesses. Order now via WhatsApp!"/>
+  <meta property="og:image" content="https://yourdomain.com/am_powder.jpeg"/>
+  <meta property="og:url" content="https://yourdomain.com/"/>
+  <meta property="og:type" content="website"/>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"/>
+
+  <style>
+    :root {
+      --chai-red: #a52a2a;
+      --gold: #c9a96e;
+      --deep-green: #1e3a2f;
+      --cream: #fdf8f0;
+      --dark: #2c1508;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--cream);
+      color: var(--dark);
+      line-height: 1.7;
+      padding-bottom: 140px;
+    }
+
+    .tea-vibe-bg {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(to bottom, #fffaf5, #f5e9d9);
+    }
+
+    .tea-vibe-bg::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: url('tea-clipart.png');
+      background-repeat: repeat;
+      background-size: 180px auto;
+      opacity: 0.10;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .tea-vibe-bg > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    h1, h2, h3 { font-family: 'Playfair Display', serif; }
+    
+    .sticky-nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(165,42,42,0.95);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      padding: 0.8rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+    .logo-container { display: flex; align-items: center; }
+    .logo {
+      height: 65px;
+      width: auto;
+      margin-right: 1.5rem;
+      transition: all 0.4s ease;
+    }
+    .logo:hover {
+      transform: scale(1.08) translateY(-3px);
+      filter: drop-shadow(0 6px 12px rgba(0,0,0,0.25));
+    }
+    .nav-links a {
+      color: white;
+      margin: 0 1.2rem;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.1rem;
+      transition: 0.3s;
+    }
+    .nav-links a:hover { color: var(--gold); }
+
+    section { padding: 7rem 1.5rem 5rem; }
+
+    .hero {
+      position: relative;
+      height: 80vh;
+      padding-top: 60px;
+      padding-left: -100vw;          /* ← ADDED: space from left edge */
+      padding-right: -100vw;         /* ← ADDED: space from right edge */
+      overflow: hidden;
+      box-sizing: border-box;
+      background: var(--dark);
+    }
+
+    /* FIX: HERO IMAGES MUST STAY SHARP */
+    .hero-slider {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      animation: slide 30s infinite ease-in-out;
+      z-index: 3;   /* HERO IMAGES */
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(rgba(0,0,0,0.20), rgba(0,0,0,0.20));
+      z-index: 4;   /* DARK OVERLAY – above slider */
+    }
+
+    .hero-logo-blur {
+      position: absolute;
+      top: 50%;
+      width: 520px;
+      opacity: 0.30;
+      filter: blur(3px) drop-shadow(0 0 40px rgba(201,169,110,0.45));
+      z-index: 1;   /* BLUR LOGOS ONLY */
+      pointer-events: none;
+      transform: translateY(-50%);
+    }
+
+    .hero-logo-left  { left: 3%; }
+    .hero-logo-right { right: 3%; }
+
+    .slide {
+      min-width: 50%;
+      height: 105%;
+      object-fit: contain;
+      object-position: center center;
+      background: var(--dark);
+      flex-shrink: 0;
+      image-rendering: -webkit-optimize-contrast;
+      image-rendering: crisp-edges;
+      transform: scale(0.90);
+      transition: transform 0.6s ease;
+    }
+
+    @keyframes slide {
+      0%   { transform: translateX(0); }
+      20%  { transform: translateX(0); }
+      25%  { transform: translateX(-100%); }
+      45%  { transform: translateX(-100%); }
+      50%  { transform: translateX(-200%); }
+      70%  { transform: translateX(-200%); }
+      75%  { transform: translateX(-300%); }
+      95%  { transform: translateX(-300%); }
+      100% { transform: translateX(-400%); }
+    }
+
+    .btn-whatsapp {
+      background: #25D366;
+      color: white;
+      padding: 1.2rem 3rem;
+      border-radius: 50px;
+      font-size: 1.4rem;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 10px 35px rgba(37,213,102,0.5);
+      transition: all 0.4s;
+      border: 3px solid var(--gold);
+      display: inline-block;
+    }
+    .btn-whatsapp:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 50px rgba(37,213,102,0.7);
+    }
+
+    .container { max-width: 1300px; margin: 0 auto; position: relative; z-index: 1; }
+
+    #products .container {
+      max-width: 1600px;
+      padding: 0 2rem;
+    }
+
+    #products {
+      padding: 10rem 1.5rem 8rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+      gap: 3rem;
+    }
+
+    .card {
+      background: white;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 12px 40px rgba(165,42,42,0.15);
+      transition: all 0.4s;
+      text-align: center;
+      border: 2px solid var(--gold);
+      position: relative;
+      z-index: 2;
+    }
+    .card:hover { transform: translateY(-12px); box-shadow: 0 25px 60px rgba(165,42,42,0.25); }
+    .card img { 
+      width: 100%; 
+      height: 340px;
+      object-fit: contain; 
+      padding: 20px; 
+      transition: transform 0.5s; 
+    }
+    .card:hover img { transform: scale(1.05); }
+    .card h3 { 
+      font-size: 2.4rem; 
+      color: var(--chai-red); 
+      margin: 1.5rem 1.2rem 0.8rem; 
+    }
+    .card p { 
+      font-size: 1.25rem; 
+      padding: 0 1.5rem 1.5rem; 
+    }
+
+    /* RECIPE GALLERY */
+    .recipe-gallery {
+      display: flex;
+      overflow-x: auto;
+      gap: 1.8rem;
+      padding: 1.5rem 0;
+      scroll-behavior: smooth;
+      scrollbar-width: thin;
+      scrollbar-color: var(--gold) var(--cream);
+    }
+
+    .recipe-gallery::-webkit-scrollbar {
+      height: 10px;
+    }
+
+    .recipe-gallery::-webkit-scrollbar-track {
+      background: var(--cream);
+    }
+
+    .recipe-gallery::-webkit-scrollbar-thumb {
+      background: var(--gold);
+      border-radius: 10px;
+    }
+
+    .recipe-item {
+      flex: 0 0 380px;
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+      border: 2px solid var(--gold);
+      transition: all 0.3s;
+    }
+
+    .recipe-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 50px rgba(165,42,42,0.25);
+    }
+
+    .recipe-item img {
+      width: 100%;
+      height: 600px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .recipe-item p {
+      padding: 1.2rem;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--chai-red);
+      text-align: center;
+      margin: 0;
+    }
+
+    /* Why Choose Us */
+    .why-section { text-align: center; }
+
+    .why-carousel-container {
+      overflow: hidden;
+      max-width: 100%;
+      margin: 2.5rem auto 0;
+      position: relative;
+      padding: 2rem 0;
+    }
+
+    .why-carousel-track {
+      display: flex;
+      animation: slideWhy 50s linear infinite;
+      width: max-content;
+    }
+
+    .why-carousel-track:hover { animation-play-state: paused; }
+
+    .why-card {
+      flex: 0 0 380px;
+      margin: 0 1.6rem;
+      padding: 2.5rem 2rem;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 12px 35px rgba(165,42,42,0.18);
+      border: 3px solid var(--gold);
+      text-align: center;
+      transition: all 0.4s ease;
+      color: var(--dark);
+    }
+
+    .why-card:hover {
+      transform: translateY(-16px) scale(1.04);
+      box-shadow: 0 25px 60px rgba(165,42,42,0.32);
+      border-color: var(--chai-red);
+    }
+
+    .why-icon {
+      font-size: 4.5rem;
+      margin-bottom: 1.2rem;
+      color: var(--chai-red);
+      line-height: 1;
+    }
+
+    .why-card strong {
+      display: block;
+      font-size: 1.7rem;
+      color: var(--chai-red);
+      margin-bottom: 0.8rem;
+    }
+
+    .why-card p {
+      font-size: 1.2rem;
+      margin: 0;
+    }
+
+    .why-carousel-container::before,
+    .why-carousel-container::after {
+      content: "";
+      position: absolute;
+      top: 0; bottom: 0;
+      width: 140px;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .why-carousel-container::before { left: 0; background: linear-gradient(to right, var(--cream), transparent); }
+    .why-carousel-container::after  { right: 0; background: linear-gradient(to left, var(--cream), transparent); }
+
+    @keyframes slideWhy {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    footer {
+      background: var(--deep-green);
+      color: white;
+      text-align: center;
+      padding: 3.5rem 1.5rem;
+      font-size: 1.2rem;
+      position: relative;
+    }
+    footer a { color: #25D366; text-decoration: none; font-weight: 600; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .sticky-nav { 
+        flex-direction: column; 
+        padding: 1rem 1.2rem; 
+      }
+      .nav-links { margin-top: 1rem; }
+      .logo { height: 48px; margin-right: 1rem; }
+      
+      .hero {
+        height: 60vh;
+        padding-top: 50px;
+        padding-left: 4vw;       /* smaller side padding on mobile */
+        padding-right: 4vw;
+      }
+      
+      .slide {
+        transform: scale(0.90);
+        object-position: center 35%;
+      }
+      
+      #products { padding: 6rem 1rem 5rem; }
+      #products h2 { font-size: 3.2rem; margin: 4rem 0 2.5rem; }
+      .grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .card img { height: 300px; }
+      .why-card { flex: 0 0 320px; padding: 2rem 1.5rem; }
+      .why-icon { font-size: 3.8rem; }
+      body { padding-bottom: 100px; }
+
+      .recipe-gallery {
+        flex-direction: column;
+        align-items: center;
+      }
+      .recipe-item {
+        flex: 0 0 auto;
+        width: 90%;
+        max-width: 420px;
+      }
+      .recipe-item img {
+        height: 260px;
+      }
+
+      .hero-logo-blur {
+        width: 320px;
+        opacity: 0.20;
+        filter: blur(2px) drop-shadow(0 0 28px rgba(201,169,110,0.35));
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="sticky-nav">
+    <div class="logo-container">
+      <a href="#home">
+        <img src="bansuri-logo.png" alt="Bansuri Tea Logo" class="logo">
+      </a>
+    </div>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#products">Products</a>
+      <a href="#why">Why Choose Us</a>
+      <a href="#recipe">Recipe</a>
+      <a href="#addons">More Products</a>
+      <a href="#wholesale">Wholesale</a>
+    </div>
+  </nav>
+
+  <section class="hero" id="home">
+    <img src="bansuri-logo.png" class="hero-logo-blur hero-logo-left" alt="">
+    <img src="bansuri-logo.png" class="hero-logo-blur hero-logo-right" alt="">
+    <div class="hero-slider">
+      <img src="hero-chai-2.jpg" alt="Steaming kadak chai" class="slide">
+      <img src="hero-chai-1.jpeg" alt="Bansuri tea premix" class="slide">
+      <img src="hero-chai-3.jpg" alt="Traditional tapri tea" class="slide">
+      <img src="hero-chai-4.jpeg" alt="Jaggery gudh chai" class="slide">
+      <img src="hero-chai-5.jpeg" alt="Basundi flavored chai" class="slide">
+      <img src="hero-chai-6.jpeg" alt="Jaggery gudh chai" class="slide">
+      <img src="hero-chai-7.jpeg" alt="Basundi flavored chai" class="slide">
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section id="products" class="tea-vibe-bg">
+    <div class="container">
+      <h2 style="text-align:center; font-size:4.5rem; color:var(--chai-red); margin:5rem 0 3.5rem;">
+        Our Premium Tea 
+      </h2>
+      <div class="grid">
+        <div class="card">
+          <img src="am_powder.jpeg" alt="Amruttulya Tea">
+          <h3>Amruttulya Tea</h3>
+          <p>Classic strong chai – rich aroma & kadak color.</p>
+          <a href="https://wa.me/91XXXXXXXXXX?text=I%20want%20to%20order%20Amruttulya%20Tea" class="btn-whatsapp" style="font-size:1.3rem; padding:1.2rem 2.8rem; margin:1.2rem 0;">Order Now</a>
+        </div>
+        <div class="card">
+          <img src="jt.jpeg" alt="Jaggery Tea">
+          <h3>Jaggery Tea</h3>
+          <p>Natural jaggery sweetness – traditional healthy taste.</p>
+          <a href="https://wa.me/91XXXXXXXXXX?text=I%20want%20to%20order%20Jaggery%20Tea" class="btn-whatsapp" style="font-size:1.3rem; padding:1.2rem 2.8rem; margin:1.2rem 0;">Order Now</a>
+        </div>
+        <div class="card">
+          <img src="am_tea.jpeg" alt="Basundi Tea">
+          <h3>Basundi Tea Premix</h3>
+          <p>Creamy rich basundi flavor – indulgent sweet Basundi chai.</p>
+          <a href="https://wa.me/91XXXXXXXXXX?text=I%20want%20to%20order%20Basundi%20Tea" class="btn-whatsapp" style="font-size:1.3rem; padding:1.2rem 2.8rem; margin:1.2rem 0;">Order Now</a>
+        </div>
+        <div class="card">
+          <img src="LEMON.jpg" alt="Masala Chai">
+          <h3>Lemon Tea Premix</h3>
+          <p>Instant Lemon Tea magic.</p>
+          <a href="https://wa.me/91XXXXXXXXXX?text=I%20want%20to%20order%20Masala%20Chai" class="btn-whatsapp" style="font-size:1.3rem; padding:1.2rem 2.8rem; margin:1.2rem 0;">Order Now</a>
+        </div>
+        <div class="card">
+          <img src="coffee.jpg" alt="Ginger Chai">
+          <h3>Coffee Premix</h3>
+          <p>Strong COFFEE – perfect for All Seasons</p>
+          <a href="https://wa.me/91XXXXXXXXXX?text=I%20want%20to%20order%20Ginger%20Chai" class="btn-whatsapp" style="font-size:1.3rem; padding:1.2rem 2.8rem; margin:1.2rem 0;">Order Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section id="why" class="tea-vibe-bg why-section">
+    <div class="container">
+      <h2 style="font-size:4.2rem; color:var(--chai-red); margin:5rem 0 1.5rem; text-shadow: 1px 1px 3px rgba(0,0,0,0.25);">
+        Why Choose <span style="color:var(--black);">Bansuri</span> Tea?
+      </h2>
+      <p style="font-size:1.5rem; margin-bottom:3rem; max-width:900px; margin-left:auto; margin-right:auto; font-weight:500;">
+        Pure ingredients • Kadak tapri swad • Loved by tea stalls & Loves across Maharashtra
+      </p>
+
+      <div class="why-carousel-container">
+        <div class="why-carousel-track">
+          <div class="why-card">
+            <div class="why-icon">🍃</div>
+            <strong>100% Pure Tea</strong>
+            <p>No milk powder, no fillers — only authentic, high-quality tea leaves & handpicked masala</p>
+          </div>
+          <div class="why-card">
+            <div class="why-icon">🔥</div>
+            <strong>Perfect Kadak Tapri Taste</strong>
+            <p>Traditional Amruttulya masala blend — strong color, rich aroma, just like roadside chai</p>
+          </div>
+          <div class="why-card">
+            <div class="why-icon">₹</div>
+            <strong>High Margin, Low Cost</strong>
+            <p>Economical per cup — more profit for tea stalls, hotels, cafes & franchises</p>
+          </div>
+          <div class="why-card">
+            <div class="why-icon">🏪</div>
+            <strong>Trusted by Professionals</strong>
+            <p>Used daily by thousands of tea vendors & businesses across Maharashtra</p>
+          </div>
+          <div class="why-card">
+            <div class="why-icon">❤️</div>
+            <strong>Loved by Tea Lovers</strong>
+            <p>Thousands of happy customers — real boiled chai experience at shop</p>
+          </div>
+
+          <!-- Duplicates for seamless loop -->
+          <div class="why-card">
+            <div class="why-icon">🍃</div>
+            <strong>100% Pure Tea</strong>
+            <p>No milk powder, no fillers — only authentic, high-quality tea leaves & handpicked masala</p>
+          </div>
+          <div class="why-card">
+            <div class="why-icon">🔥</div>
+            <strong>Perfect Kadak Tapri Taste</strong>
+            <p>Traditional Amruttulya masala blend — strong color, rich aroma, just like roadside chai</p>
+          </div>
+          <div class="why-card">
+            <div class="why-icon">₹</div>
+            <strong>High Margin, Low Cost</strong>
+            <p>Economical per cup — more profit for tea stalls, hotels, cafes & franchises</p>
+          </div>
+          <div class="why-card">
+            <div class="why-icon">🏪</div>
+            <strong>Trusted by Professionals</strong>
+            <p>Used daily by thousands of tea vendors & businesses across Maharashtra</p>
+          </div>
+          <div class="why-card">
+            <div class="why-icon">❤️</div>
+            <strong>Loved by Tea Lovers</strong>
+            <p>Thousands of happy customers — real boiled chai experience at home or shop</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align:center; margin-top:4rem;">
+        <a href="https://wa.me/91XXXXXXXXXX?text=Hello%20I%20want%20to%20know%20more%20about%20Bansuri%20Tea" 
+           class="btn-whatsapp" style="font-size:1.4rem; padding:1.3rem 3.5rem;">
+          Why Wait? Order Premium Chai Now!
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- RECIPE -->
+  <section id="recipe" class="tea-vibe-bg">
+    <div class="container">
+      <h2 style="text-align:center; font-size:3.8rem; color:var(--chai-red); margin:4rem 0 2rem;">Perfect Chai Recipes with Bansuri Premix</h2>
+      
+      <div class="recipe-gallery">
+        <div class="recipe-item">
+          <img src="amr.jpeg" alt="Amruttulya Chai Recipe">
+          <p>Classic Amruttulya</p>
+        </div>
+        <div class="recipe-item">
+          <img src="jr.jpeg" alt="Jaggery Chai Recipe">
+          <p>Jaggery Chai</p>
+        </div>
+        <div class="recipe-item">
+          <img src="Br.jpg" alt="Basundi Chai Recipe">
+          <p>Basundi Chai</p>
+        </div>
+        <div class="recipe-item">
+          <img src="lr.jpg" alt="Masala Chai Recipe">
+          <p>Lemon Tea</p>
+        </div>
+        <div class="recipe-item">
+          <img src="cr.jpg" alt="Adrak Chai Recipe">
+          <p>Coffee Premix</p>
+        </div>
+      </div>
+
+      <p style="text-align:center; font-size:1.6rem; font-style:italic; margin:3rem 0; color:var(--chai-red);">
+        Boil – Brew – Enjoy the real tapri experience ☕
+      </p>
+    </div>
+  </section>
+
+  <!-- ADD-ONS -->
+  <section id="addons" class="tea-vibe-bg">
+    <div class="container">
+      <h2 style="text-align:center; font-size:3.5rem; color:var(--chai-red); margin:4rem 0 2.5rem;">Additional Products for Your Tea Setup</h2>
+      <div class="grid">
+        <div class="card">
+          <img src="Statue.JPEG" alt="Tea Man / Chaiwala Statue">
+          <h3>Tea Man Statue</h3>
+          <p>Attractive chaiwala statue – perfect branding for tea stalls & shops</p>
+          <a href="https://wa.me/91XXXXXXXXXX?text=I%20want%20Tea%20Man%20Statue" class="btn-whatsapp" style="font-size:1.15rem; padding:1rem 2.2rem; margin:1rem 0;">Enquire Now</a>
+        </div>
+        <div class="card">
+          <img src="cups.JPEG" alt="Printed / Branded Tea Cups">
+          <h3>Printed Tea Cups</h3>
+          <p>Custom printed cutting chai glasses with your branding</p>
+          <a href="https://wa.me/91XXXXXXXXXX?text=I%20want%20Printed%20Tea%20Cups" class="btn-whatsapp" style="font-size:1.15rem; padding:1rem 2.2rem; margin:1rem 0;">Enquire Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHOLESALE -->
+  <section id="wholesale" class="tea-vibe-bg">
+    <div class="container">
+      <h2 style="text-align:center; font-size:3.8rem; color:var(--chai-red); margin:4rem 0 2rem;">Wholesale & Franchise Opportunity</h2>
+      <img src="wholesale1.jpeg" alt="Bansuri Tea wholesale" style="width:100%; max-width:900px; border-radius:16px; display:block; margin:0 auto 2rem; box-shadow:0 10px 30px rgba(0,0,0,0.15);">
+      <p style="text-align:center; font-size:1.5rem; margin-bottom:2rem;">
+        Bulk packs available • Special pricing for tea stalls, hotels & franchises
+      </p>
+      <div style="text-align:center;">
+        <a href="https://wa.me/91XXXXXXXXXX?text=I%20want%20Wholesale%20Details%20and%20pricing" class="btn-whatsapp">Get Wholesale Details on WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© Bansuri Tea | Real Boiled Chai Experience – Brewed with Love in MAHARASHTRA</p>
+    <p>Call / WhatsApp: <a href="https://wa.me/91XXXXXXXXXX">+91 XXXXXXXXXX</a></p>
+  </footer>
+
+</body>
+</html>
