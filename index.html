@@ -251,8 +251,9 @@
       background: var(--deep-green);
       color: white;
       text-align: center;
-      padding: 3rem 1.2rem;
-      font-size: 1.15rem;
+      padding: 3.5rem 1.5rem;
+      font-size: 1.2rem;
+      position: relative;
     }
 
     #admin-panel, #admin-login {
@@ -266,14 +267,6 @@
       padding: 2rem;
       justify-content: center;
       align-items: flex-start;
-    }
-    #admin-panel .inner {
-      max-width: 1100px;
-      width: 100%;
-      background: #2c1508;
-      padding: 2.5rem;
-      border-radius: 16px;
-      position: relative;
     }
     #admin-login .box {
       background: white;
@@ -358,11 +351,34 @@
     }
     #submit-enquiry:hover { background: #8c1f1f; transform: translateY(-2px); }
 
+    /* ──────────────────────────────────────────────
+       RESPONSIVE IMPROVEMENTS
+    ────────────────────────────────────────────── */
+
     @media (max-width: 768px) {
-      .sticky-nav { flex-direction: column; padding: 0.9rem 1rem; gap: 0.8rem; }
-      .nav-links { justify-content: center; gap: 0.9rem; }
+      .sticky-nav { 
+        flex-direction: column; 
+        padding: 0.9rem 1rem; 
+        gap: 0.8rem; 
+      }
+      .nav-links { 
+        justify-content: center; 
+        gap: 0.9rem; 
+      }
+      .nav-links a {
+        font-size: 1.1rem;
+        padding: 0.6rem 0.8rem;
+        min-width: 48px;
+        min-height: 48px;
+        display: flex;
+        align-items: center;
+      }
       .logo { height: 48px; margin-right: 0; }
-      .hero { height: 55vh; min-height: 380px; max-height: 520px; padding-top: 50px; }
+      .hero { 
+        height: 65vh;          /* taller on tablets & phones */
+        min-height: 420px; 
+        padding-top: 50px; 
+      }
       #products { padding: 5rem 1rem 4rem; }
       .grid { grid-template-columns: 1fr; gap: 2rem; }
       .card img { height: 260px; padding: 15px; }
@@ -373,12 +389,22 @@
       h2 { font-size: 2.8rem !important; margin: 3.5rem 0 2rem !important; }
       .btn-primary { padding: 1rem 2.2rem; font-size: 1.15rem; }
       body { padding-bottom: 100px; }
+
+      /* Pause carousel animation on mobile */
+      .why-carousel-track { animation-play-state: paused; }
     }
 
     @media (max-width: 480px) {
-      .hero { height: 50vh; min-height: 340px; }
+      .hero { 
+        height: 70vh;
+        min-height: 380px;
+      }
+      .hero-logo-blur { 
+        width: 280px; 
+        opacity: 0.22; 
+      }
       .logo { height: 44px; }
-      .nav-links a { font-size: 0.95rem; padding: 0.3rem; }
+      .nav-links a { font-size: 1rem; padding: 0.5rem 0.7rem; }
       .card img { height: 220px; padding: 12px; }
       .btn-primary { padding: 0.9rem 2rem; font-size: 1.1rem; min-height: 48px; }
       h2 { font-size: 2.4rem !important; }
@@ -387,6 +413,20 @@
       .recipe-item { flex: 0 0 290px; }
       .recipe-item img { height: 400px; }
       .modal-content { padding: 1.6rem; }
+    }
+
+    /* Extra safety for very small phones (≤360px) */
+    @media (max-width: 360px) {
+      .hero { 
+        height: 75vh;
+        min-height: 340px;
+      }
+      .hero-logo-blur { width: 240px; opacity: 0.18; }
+      .card img { height: 200px; padding: 10px; }
+      h3 { font-size: 1.8rem; }
+      .btn-primary { font-size: 1rem; padding: 0.9rem 1.4rem; min-height: 44px; }
+      .nav-links { gap: 0.6rem; }
+      .nav-links a { font-size: 0.95rem; padding: 0.5rem 0.6rem; }
     }
   </style>
 </head>
@@ -546,12 +586,23 @@
     </div>
   </section>
 
-  <footer style="background: var(--deep-green); color: white; text-align: center; padding: 3.5rem 1.5rem; font-size: 1.2rem; position: relative;">
+  <footer>
     <p>© Bansuri Tea | Real Boiled Chai Experience – Brewed with Love in MAHARASHTRA</p>
-    <div style="margin-top: 1.5rem; font-size: 0.85rem; opacity: 0.85;">
-      <a href="about.html" style="color: #c9a96e; text-decoration: none; margin: 0 1rem;">About Us</a>
-      <span style="color: #777;">|</span>
-      <a href="#" onclick="document.getElementById('admin-login').style.display='flex'; return false;" style="color: #c9a96e; text-decoration: none; margin: 0 1rem;">Admin Panel</a>
+    
+    <div style="margin-top: 1.8rem; font-size: 1.1rem; opacity: 0.92;">
+      <a href="#" 
+         onclick="document.getElementById('admin-login').style.display='flex'; return false;" 
+         style="color: #c9a96e; text-decoration: none; margin: 0 1.2rem 0 0;">
+        Admin Panel
+      </a>
+      
+      <span style="color: #c9a96e; margin: 0 1.2rem;">•</span>
+      
+      <a href="#" 
+         onclick="alert('Bansuri Tea products are proudly manufactured and marketed by\\n\\nShreyas Tea and Foods\\n\\nAll rights, licenses, trademarks, and intellectual property related to this brand and products belong exclusively to Shreyas Tea and Foods.\\n\\nThis product is manufactured and sold by Shreyas Tea and Foods.'); return false;"
+         style="color: #c9a96e; text-decoration: none; font-weight: 500; padding: 0.5rem 1rem; border: 1px solid #c9a96e; border-radius: 8px; transition: all 0.3s;">
+        About Us
+      </a>
     </div>
   </footer>
 
@@ -645,7 +696,7 @@
         desc: "All-in-One Sample Pack – Best way to try our complete range!",
         price: 300,
         oldPrice: null,
-        badge: "Best Value",
+        badge: "",
         img: "ALLINonE.jpeg",
         whatsappText: "All-in-One Sample Pack (Amruttulya 3 + Jaggery 2 + Basundi 3 + Lemon 1 + Coffee 1)",
         reviews: "320",
@@ -655,8 +706,8 @@
         id: "amruttulya",
         name: 'Amruttulya Tea (Sample Pack: 3)',
         price: 199,
-        oldPrice: 265,
-        badge: "-25% OFF",
+        oldPrice: null,
+        badge: "",
         img: "am_powder.jpeg",
         desc: "Classic strong kadak chai – rich aroma & perfect color.",
         reviews: "842",
@@ -668,7 +719,7 @@
         name: 'Jaggery Tea (Sample Pack: 2 )',
         price: 220,
         oldPrice: null,
-        badge: "Best Seller",
+        badge: "",
         img: "jt.jpeg",
         desc: "Natural gud sweetness – healthy & traditional taste.",
         reviews: "1,214",
@@ -679,7 +730,7 @@
         id: "basundi",
         name: 'Basundi Tea Premix (Sample Pack: 3 )',
         price: 249,
-        oldPrice: 320,
+        oldPrice: null,
         badge: "",
         img: "am_tea.jpeg",
         desc: "Creamy rich basundi flavor – indulgent & sweet.",
@@ -691,7 +742,7 @@
         id: "lemon",
         name: 'Lemon Tea Premix (Sample Pack: 1 )',
         price: 179,
-        oldPrice: 240,
+        oldPrice: null,
         badge: "",
         img: "LEMON.jpg",
         desc: "Instant lemon tea magic – refreshing twist.",
@@ -779,22 +830,6 @@
       grid.innerHTML = '';
 
       products.forEach(prod => {
-        const oldPriceHTML = prod.oldPrice ? `
-          <span style="color:#888; text-decoration:line-through; font-size:1.3rem;">₹${prod.oldPrice}</span>
-        ` : '';
-
-        const saveHTML = prod.oldPrice ? `
-          <span style="font-size:1.1rem; color:#2e7d32; background:#e8f5e9; padding:0.3rem 0.8rem; border-radius:12px;">
-            Save ₹${prod.oldPrice - prod.price}
-          </span>
-        ` : '';
-
-        const badgeHTML = prod.badge ? `
-          <div style="position:absolute; top:15px; ${prod.badge.includes('%') ? 'left:15px' : 'right:15px'}; background:${prod.badge.includes('%') ? '#e63946' : '#ffb300'}; color:${prod.badge.includes('%') ? 'white' : '#2c1508'}; font-weight:700; padding:0.5rem 1rem; border-radius:50px; font-size:1.1rem; z-index:10; box-shadow:0 4px 12px rgba(0,0,0,0.3);">
-            ${prod.badge}
-          </div>
-        ` : '';
-
         const priceHTML = typeof prod.price === 'number' 
           ? `<span style="color:var(--chai-red); font-size:2rem; font-weight:700;">₹${prod.price}</span>`
           : `<span style="color:var(--chai-red); font-size:1.6rem; font-weight:600;">${prod.price}</span>`;
@@ -821,7 +856,6 @@
         const card = document.createElement('div');
         card.className = 'card';
         card.innerHTML = `
-          ${badgeHTML}
           <img src="${prod.img}" alt="${prod.name}">
           <div style="padding:1.6rem 1.3rem;">
             <h3 style="font-size:2.1rem; color:var(--chai-red); margin-bottom:0.7rem; line-height:1.3;">
@@ -830,8 +864,6 @@
             <p style="font-size:1.2rem; color:#555; margin-bottom:1.3rem;">${prod.desc}</p>
             <div style="display:flex; align-items:center; gap:1.2rem; margin:1.3rem 0; font-size:1.5rem; font-weight:700; flex-wrap:wrap; justify-content:center;">
               ${priceHTML}
-              ${oldPriceHTML}
-              ${saveHTML}
             </div>
             ${prod.rating ? `
               <div style="color:#ffb300; font-size:1.4rem; margin:0.9rem 0 1.3rem;">
@@ -859,35 +891,20 @@
       const container = document.getElementById("admin-products");
       if (!container) return;
 
-      container.innerHTML = '<h3 style="color:var(--gold); margin:2rem 0 1rem;">Edit Product Prices & Badges</h3>';
+      container.innerHTML = '<h3 style="color:var(--gold); margin:2rem 0 1rem;">Edit Product Prices</h3>';
 
       products.forEach((prod, index) => {
-        const oldPriceVal = prod.oldPrice || '';
-        const badgeVal = prod.badge || '';
-
         const block = document.createElement('div');
         block.style.cssText = 'background:#3d1f0f; padding:1.5rem; border-radius:12px; margin-bottom:1.8rem; border:1px solid var(--gold);';
         block.innerHTML = `
           <h4 style="margin:0 0 1rem; color:var(--gold);">${prod.name} (${prod.id})</h4>
           
-          <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.2rem;">
+          <div style="display:grid; grid-template-columns:1fr; gap:1.2rem;">
             <div>
               <label style="display:block; color:#ccc; margin-bottom:0.4rem;">Price (₹)</label>
               <input type="number" value="${prod.price}" data-index="${index}" data-field="price" 
                      style="width:100%; padding:0.8rem; font-size:1.1rem;">
             </div>
-            <div>
-              <label style="display:block; color:#ccc; margin-bottom:0.4rem;">Old Price (₹) – empty = no discount</label>
-              <input type="number" value="${oldPriceVal}" data-index="${index}" data-field="oldPrice" 
-                     style="width:100%; padding:0.8rem; font-size:1.1rem;">
-            </div>
-          </div>
-          
-          <div style="margin-top:1.2rem;">
-            <label style="display:block; color:#ccc; margin-bottom:0.4rem;">Badge (e.g. -25% OFF, Best Seller, New – empty = hide)</label>
-            <input type="text" value="${badgeVal}" data-index="${index}" data-field="badge" 
-                   placeholder="leave empty to hide badge" 
-                   style="width:100%; padding:0.8rem; font-size:1.1rem;">
           </div>
         `;
         container.appendChild(block);
@@ -899,7 +916,7 @@
           const field = this.dataset.field;
           let value = this.value.trim();
           
-          if (field === 'price' || field === 'oldPrice') {
+          if (field === 'price') {
             value = value === '' ? null : Number(value);
           }
           
