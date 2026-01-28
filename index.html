@@ -31,7 +31,7 @@
       background: var(--cream);
       color: var(--dark);
       line-height: 1.7;
-      padding-bottom: 140px;
+      padding-bottom: 120px;
     }
 
     .tea-vibe-bg {
@@ -39,23 +39,18 @@
       overflow: hidden;
       background: linear-gradient(to bottom, #fffaf5, #f5e9d9);
     }
-
     .tea-vibe-bg::before {
       content: "";
       position: absolute;
       inset: 0;
       background-image: url('tea-clipart.png');
       background-repeat: repeat;
-      background-size: 180px auto;
-      opacity: 0.10;
+      background-size: 140px auto;
+      opacity: 0.08;
       pointer-events: none;
       z-index: 0;
     }
-
-    .tea-vibe-bg > * {
-      position: relative;
-      z-index: 1;
-    }
+    .tea-vibe-bg > * { position: relative; z-index: 1; }
 
     h1, h2, h3 { font-family: 'Playfair Display', serif; }
     
@@ -63,43 +58,38 @@
       position: fixed;
       top: 0;
       width: 100%;
-      background: rgba(165,42,42,0.95);
+      background: rgba(165,42,42,0.96);
       backdrop-filter: blur(10px);
       z-index: 1000;
-      padding: 0.8rem 1.5rem;
+      padding: 0.7rem 1.2rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.25);
     }
     .logo-container { display: flex; align-items: center; }
-    .logo {
-      height: 65px;
-      width: auto;
-      margin-right: 1.5rem;
-      transition: all 0.4s ease;
-    }
-    .logo:hover {
-      transform: scale(1.08) translateY(-3px);
-      filter: drop-shadow(0 6px 12px rgba(0,0,0,0.25));
-    }
+    .logo { height: 58px; width: auto; margin-right: 1.2rem; transition: all 0.3s; }
+    .logo:hover { transform: scale(1.06); }
+
+    .nav-links { display: flex; flex-wrap: wrap; gap: 1.1rem; }
     .nav-links a {
       color: white;
-      margin: 0 1.2rem;
       text-decoration: none;
-      font-weight: 700;
-      font-size: 1.1rem;
+      font-weight: 600;
+      font-size: 1.05rem;
       transition: 0.3s;
+      padding: 0.4rem 0.3rem;
+      min-width: 44px;
     }
     .nav-links a:hover { color: var(--gold); }
 
-    section { padding: 7rem 1.5rem 5rem; }
+    section { padding: 6rem 1.2rem 4rem; }
 
     .hero {
       position: relative;
-      height: 95vh;
-      min-height: 580px;
-      max-height: 900px;
+      height: 85vh;
+      min-height: 520px;
+      max-height: 820px;
       padding-top: 60px;
       overflow: hidden;
       background: var(--dark);
@@ -109,7 +99,7 @@
       position: absolute;
       inset: 0;
       display: flex;
-      animation: slide 30s infinite ease-in-out;
+      animation: slide 36s infinite ease-in-out;
       z-index: 3;
     }
 
@@ -117,36 +107,31 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(rgba(0,0,0,0.05), rgba(0,0,0,0.08));
+      background: linear-gradient(rgba(0,0,0,0.06), rgba(0,0,0,0.10));
       z-index: 4;
     }
 
     .hero-logo-blur {
       position: absolute;
       top: 50%;
-      width: 520px;
-      opacity: 0.30;
-      filter: blur(3px) drop-shadow(0 0 40px rgba(201,169,110,0.45));
+      width: 420px;
+      opacity: 0.28;
+      filter: blur(4px) drop-shadow(0 0 35px rgba(201,169,110,0.4));
       z-index: 1;
       pointer-events: none;
       transform: translateY(-50%);
     }
-
-    .hero-logo-left  { left: 3%; }
-    .hero-logo-right { right: 3%; }
+    .hero-logo-left  { left: 2%; }
+    .hero-logo-right { right: 2%; }
 
     .slide {
       min-width: 50%;
       height: 100%;
       object-fit: cover;
-      object-position: center center;
+      object-position: center;
       background: var(--dark);
       flex-shrink: 0;
-      image-rendering: -webkit-optimize-contrast;
       image-rendering: crisp-edges;
-      transform: scale(1.00);
-      transition: transform 0.6s ease;
-      filter: brightness(1.15) contrast(1.08);
     }
 
     @keyframes slide {
@@ -164,101 +149,110 @@
     .btn-primary {
       background: var(--chai-red);
       color: white;
-      padding: 1.2rem 3rem;
+      padding: 1.1rem 2.6rem;
       border-radius: 50px;
-      font-size: 1.4rem;
+      font-size: 1.25rem;
       font-weight: 700;
-      box-shadow: 0 10px 35px rgba(165,42,42,0.4);
-      transition: all 0.4s;
+      box-shadow: 0 8px 28px rgba(165,42,42,0.35);
+      transition: all 0.35s;
       border: 3px solid var(--gold);
       cursor: pointer;
-      display: inline-block;
       text-decoration: none;
       text-align: center;
+      min-height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     .btn-primary:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 18px 50px rgba(165,42,42,0.6);
+      transform: translateY(-5px);
+      box-shadow: 0 14px 40px rgba(165,42,42,0.5);
     }
 
-    .container { max-width: 1300px; margin: 0 auto; position: relative; z-index: 1; }
-
-    #products .container { max-width: 1600px; padding: 0 2rem; }
-
-    #products { padding: 10rem 1.5rem 8rem; }
+    .container { max-width: 1280px; margin: 0 auto; position: relative; z-index: 1; }
+    #products .container { max-width: 1520px; padding: 0 1.5rem; }
+    #products { padding: 8rem 1.2rem 6rem; }
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-      gap: 3rem;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 2.2rem;
     }
 
     .card {
       background: white;
-      border-radius: 18px;
+      border-radius: 16px;
       overflow: hidden;
-      box-shadow: 0 12px 40px rgba(165,42,42,0.15);
-      transition: all 0.4s;
+      box-shadow: 0 10px 32px rgba(165,42,42,0.12);
+      transition: all 0.35s;
       text-align: center;
       border: 2px solid var(--gold);
-      position: relative;
-      z-index: 2;
     }
-    .card:hover { 
-      transform: translateY(-12px); 
-      box-shadow: 0 25px 60px rgba(165,42,42,0.25); 
-    }
-    .card img { 
-      width: 100%; 
-      height: 340px;
-      object-fit: contain; 
-      padding: 20px; 
-      transition: transform 0.5s; 
-    }
-    .card:hover img { transform: scale(1.05); }
+    .card:hover { transform: translateY(-10px); box-shadow: 0 20px 50px rgba(165,42,42,0.22); }
+    .card img { width: 100%; height: 300px; object-fit: contain; padding: 18px; transition: transform 0.45s; }
+    .card:hover img { transform: scale(1.04); }
 
     .admin-btn {
       position: fixed;
-      bottom: 25px;
-      right: 25px;
+      bottom: 20px;
+      right: 20px;
       background: var(--chai-red);
       color: white;
       border: none;
-      width: 54px;
-      height: 54px;
+      width: 52px;
+      height: 52px;
       border-radius: 50%;
-      font-size: 1.7rem;
+      font-size: 1.6rem;
       cursor: pointer;
-      box-shadow: 0 6px 18px rgba(165,42,42,0.5);
+      box-shadow: 0 5px 16px rgba(165,42,42,0.45);
       z-index: 999;
     }
 
     .why-section { text-align: center; }
-    .why-carousel-container { overflow: hidden; max-width: 100%; margin: 2.5rem auto 0; position: relative; padding: 2rem 0; }
-    .why-carousel-track { display: flex; animation: slideWhy 50s linear infinite; width: max-content; }
+    .why-carousel-container { overflow: hidden; max-width: 100%; margin: 2rem auto 0; position: relative; padding: 1.5rem 0; }
+    .why-carousel-track { display: flex; animation: slideWhy 40s linear infinite; width: max-content; }
     .why-carousel-track:hover { animation-play-state: paused; }
-    .why-card { flex: 0 0 380px; margin: 0 1.6rem; padding: 2.5rem 2rem; border-radius: 20px; background: rgba(255,255,255,0.96); backdrop-filter: blur(8px); box-shadow: 0 12px 35px rgba(165,42,42,0.18); border: 3px solid var(--gold); text-align: center; transition: all 0.4s ease; color: var(--dark); }
-    .why-card:hover { transform: translateY(-16px) scale(1.04); box-shadow: 0 25px 60px rgba(165,42,42,0.32); border-color: var(--chai-red); }
-    .why-icon { font-size: 4.5rem; margin-bottom: 1.2rem; color: var(--chai-red); line-height: 1; }
-    .why-card strong { display: block; font-size: 1.7rem; color: var(--chai-red); margin-bottom: 0.8rem; }
-    .why-card p { font-size: 1.2rem; margin: 0; }
-    .why-carousel-container::before, .why-carousel-container::after { content: ""; position: absolute; top: 0; bottom: 0; width: 140px; z-index: 2; pointer-events: none; }
+    .why-card { flex: 0 0 360px; margin: 0 1.4rem; padding: 2rem 1.6rem; border-radius: 18px; background: rgba(255,255,255,0.97); backdrop-filter: blur(8px); box-shadow: 0 10px 30px rgba(165,42,42,0.15); border: 2px solid var(--gold); text-align: center; transition: all 0.35s; }
+    .why-card:hover { transform: translateY(-14px) scale(1.03); box-shadow: 0 22px 55px rgba(165,42,42,0.28); border-color: var(--chai-red); }
+    .why-icon { font-size: 4rem; margin-bottom: 1rem; color: var(--chai-red); }
+    .why-card strong { display: block; font-size: 1.6rem; color: var(--chai-red); margin-bottom: 0.7rem; }
+    .why-card p { font-size: 1.15rem; margin: 0; }
+    .why-carousel-container::before, .why-carousel-container::after { content: ""; position: absolute; top: 0; bottom: 0; width: 120px; z-index: 2; pointer-events: none; }
     .why-carousel-container::before { left: 0; background: linear-gradient(to right, var(--cream), transparent); }
     .why-carousel-container::after  { right: 0; background: linear-gradient(to left, var(--cream), transparent); }
     @keyframes slideWhy { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
-    .recipe-gallery { display: flex; overflow-x: auto; gap: 1.8rem; padding: 1.5rem 0; scroll-behavior: smooth; }
-    .recipe-item { flex: 0 0 380px; background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.12); border: 2px solid var(--gold); transition: all 0.3s; }
-    .recipe-item:hover { transform: translateY(-10px); box-shadow: 0 20px 50px rgba(165,42,42,0.25); }
-    .recipe-item img { width: 100%; height: 600px; object-fit: cover; }
-    .recipe-item p { padding: 1.2rem; font-size: 1.3rem; font-weight: 600; color: var(--chai-red); text-align: center; margin: 0; }
+    .recipe-gallery {
+      display: flex;
+      overflow-x: auto;
+      gap: 1.6rem;
+      padding: 1.2rem 0;
+      scroll-behavior: smooth;
+      scroll-snap-type: x mandatory;
+    }
+    .recipe-gallery::-webkit-scrollbar { height: 8px; }
+    .recipe-gallery::-webkit-scrollbar-thumb { background: var(--chai-red); border-radius: 4px; }
+
+    .recipe-item {
+      flex: 0 0 360px;
+      background: white;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 8px 26px rgba(0,0,0,0.1);
+      border: 2px solid var(--gold);
+      transition: all 0.3s;
+      scroll-snap-align: start;
+    }
+    .recipe-item:hover { transform: translateY(-8px); box-shadow: 0 18px 45px rgba(165,42,42,0.22); }
+    .recipe-item img { width: 100%; height: 520px; object-fit: cover; }
+    .recipe-item p { padding: 1rem; font-size: 1.25rem; font-weight: 600; color: var(--chai-red); text-align: center; margin: 0; }
 
     footer {
       background: var(--deep-green);
       color: white;
       text-align: center;
-      padding: 3.5rem 1.5rem;
-      font-size: 1.2rem;
+      padding: 3rem 1.2rem;
+      font-size: 1.15rem;
     }
 
     #admin-panel, #admin-login {
@@ -295,77 +289,58 @@
       display: none;
       position: fixed;
       inset: 0;
-      background: rgba(0,0,0,0.75);
+      background: rgba(0,0,0,0.78);
       z-index: 10000;
       justify-content: center;
       align-items: flex-start;
       overflow-y: auto;
       padding: 1rem;
-      -webkit-overflow-scrolling: touch;
     }
 
     .modal-content {
       background: white;
-      border-radius: 16px;
-      max-width: 480px;
+      border-radius: 14px;
+      max-width: 460px;
       width: 100%;
-      padding: 2.2rem;
+      padding: 2rem;
       position: relative;
-      box-shadow: 0 15px 50px rgba(0,0,0,0.4);
-      margin: 5vh auto;
-      min-height: 40vh;
+      box-shadow: 0 12px 45px rgba(0,0,0,0.38);
+      margin: 4vh auto;
     }
 
     .modal-close {
       position: absolute;
-      top: 12px;
-      right: 16px;
+      top: 10px;
+      right: 14px;
       font-size: 2.2rem;
       color: #777;
       cursor: pointer;
-      line-height: 1;
     }
 
     .modal-title {
       color: var(--chai-red);
-      font-size: 2rem;
-      margin-bottom: 1.6rem;
+      font-size: 1.9rem;
+      margin-bottom: 1.4rem;
       text-align: center;
     }
 
-    .form-group {
-      margin-bottom: 1.6rem;
-    }
-
-    .form-group label {
-      display: block;
-      margin-bottom: 0.5rem;
-      font-weight: 600;
-      color: #444;
-    }
-
-    .form-group input,
-    .form-group textarea,
-    .form-group select {
+    .form-group { margin-bottom: 1.4rem; }
+    .form-group label { display: block; margin-bottom: 0.45rem; font-weight: 600; color: #444; }
+    .form-group input, .form-group textarea, .form-group select {
       width: 100%;
-      padding: 0.9rem 1.1rem;
+      padding: 0.85rem 1rem;
       border: 2px solid #ddd;
       border-radius: 8px;
       font-size: 1.05rem;
     }
-
     .form-group select {
       appearance: none;
       background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23333' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E") no-repeat right 1rem center/8px 10px;
     }
-
-    .form-group input:focus,
-    .form-group textarea:focus,
-    .form-group select:focus {
+    .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
       outline: none;
       border-color: var(--chai-red);
-      box-shadow: 0 0 0 3px rgba(165,42,42,0.15);
-      margin-bottom: 2.5rem;
+      box-shadow: 0 0 0 3px rgba(165,42,42,0.12);
     }
 
     #submit-enquiry {
@@ -373,31 +348,45 @@
       color: white;
       border: none;
       width: 100%;
-      padding: 1.2rem;
-      font-size: 1.3rem;
+      padding: 1.15rem;
+      font-size: 1.25rem;
       font-weight: 700;
       border-radius: 50px;
       cursor: pointer;
-      margin-top: 1.5rem;
-      transition: all 0.3s;
+      margin-top: 1.2rem;
+      min-height: 52px;
     }
-
-    #submit-enquiry:hover {
-      background: #8c1f1f;
-      transform: translateY(-2px);
-    }
+    #submit-enquiry:hover { background: #8c1f1f; transform: translateY(-2px); }
 
     @media (max-width: 768px) {
-      .sticky-nav { flex-direction: column; padding: 1rem 1.2rem; }
-      .nav-links { margin-top: 1rem; flex-wrap: wrap; justify-content: center; }
-      .logo { height: 48px; margin-right: 1rem; }
-      .hero { height: 60vh; padding-top: 50px; }
-      #products { padding: 6rem 1rem 5rem; }
-      .grid { grid-template-columns: 1fr; gap: 2.5rem; }
-      .card img { height: 300px; }
+      .sticky-nav { flex-direction: column; padding: 0.9rem 1rem; gap: 0.8rem; }
+      .nav-links { justify-content: center; gap: 0.9rem; }
+      .logo { height: 48px; margin-right: 0; }
+      .hero { height: 55vh; min-height: 380px; max-height: 520px; padding-top: 50px; }
+      #products { padding: 5rem 1rem 4rem; }
+      .grid { grid-template-columns: 1fr; gap: 2rem; }
+      .card img { height: 260px; padding: 15px; }
+      .why-card { flex: 0 0 320px; margin: 0 1.1rem; padding: 1.8rem 1.4rem; }
+      .why-icon { font-size: 3.5rem; }
+      .recipe-item { flex: 0 0 320px; }
+      .recipe-item img { height: 460px; }
+      h2 { font-size: 2.8rem !important; margin: 3.5rem 0 2rem !important; }
+      .btn-primary { padding: 1rem 2.2rem; font-size: 1.15rem; }
       body { padding-bottom: 100px; }
-      .admin-btn { width: 50px; height: 50px; font-size: 1.6rem; bottom:20px; right:20px; }
-      .modal-content { padding: 1.8rem; }
+    }
+
+    @media (max-width: 480px) {
+      .hero { height: 50vh; min-height: 340px; }
+      .logo { height: 44px; }
+      .nav-links a { font-size: 0.95rem; padding: 0.3rem; }
+      .card img { height: 220px; padding: 12px; }
+      .btn-primary { padding: 0.9rem 2rem; font-size: 1.1rem; min-height: 48px; }
+      h2 { font-size: 2.4rem !important; }
+      .why-card { flex: 0 0 290px; margin: 0 1rem; padding: 1.6rem 1.2rem; }
+      .why-icon { font-size: 3rem; }
+      .recipe-item { flex: 0 0 290px; }
+      .recipe-item img { height: 400px; }
+      .modal-content { padding: 1.6rem; }
     }
   </style>
 </head>
@@ -435,23 +424,21 @@
 
   <section id="products" class="tea-vibe-bg">
     <div class="container">
-      <h2 style="text-align:center; font-size:4.5rem; color:var(--chai-red); margin:5rem 0 3.5rem;">
+      <h2 style="text-align:center; font-size:4.2rem; color:var(--chai-red); margin:4rem 0 3rem;">
         Our Premium Chai Premixes
       </h2>
-
       <div class="grid">
         <!-- Products inserted by JavaScript -->
       </div>
     </div>
   </section>
 
-  <!-- Why Choose Us section remains unchanged -->
   <section id="why" class="tea-vibe-bg why-section">
     <div class="container">
-      <h2 style="font-size:4.2rem; color:var(--chai-red); margin:5rem 0 1.5rem; text-shadow: 1px 1px 3px rgba(0,0,0,0.25);">
+      <h2 style="font-size:4rem; color:var(--chai-red); margin:4.5rem 0 1.5rem; text-shadow: 1px 1px 3px rgba(0,0,0,0.2);">
         Why Choose <span style="color:var(--dark);">Bansuri</span> Tea?
       </h2>
-      <p style="font-size:1.5rem; margin-bottom:3rem; max-width:900px; margin-left:auto; margin-right:auto; font-weight:500;">
+      <p style="font-size:1.4rem; margin-bottom:2.5rem; max-width:860px; margin-left:auto; margin-right:auto; font-weight:500;">
         Pure ingredients • Kadak tapri swad • Loved by tea stalls & lovers across Maharashtra
       </p>
 
@@ -460,43 +447,42 @@
           <div class="why-card">
             <div class="why-icon">🍃</div>
             <strong>100% Pure Tea</strong>
-            <p>No milk powder, no fillers — only authentic, high-quality tea leaves & handpicked masala</p>
+            <p>No milk powder, no fillers — authentic tea leaves & handpicked masala</p>
           </div>
           <div class="why-card">
             <div class="why-icon">🔥</div>
             <strong>Perfect Kadak Tapri Taste</strong>
-            <p>Traditional Amruttulya masala blend — strong color, rich aroma, just like roadside chai</p>
+            <p>Traditional Amruttulya blend — strong color, rich aroma</p>
           </div>
           <div class="why-card">
             <div class="why-icon">₹</div>
             <strong>High Margin, Low Cost</strong>
-            <p>Economical per cup — more profit for tea stalls, hotels, cafes & franchises</p>
+            <p>Economical per cup — better profit for vendors</p>
           </div>
           <div class="why-card">
             <div class="why-icon">🏪</div>
             <strong>Trusted by Professionals</strong>
-            <p>Used daily by thousands of tea vendors & businesses across Maharashtra</p>
+            <p>Used daily by thousands of tea vendors in Maharashtra</p>
           </div>
           <div class="why-card">
             <div class="why-icon">❤️</div>
             <strong>Loved by Tea Lovers</strong>
-            <p>Thousands of happy customers — real boiled chai experience at home or shop</p>
+            <p>Real boiled chai experience at home or shop</p>
           </div>
           <!-- duplicates for smooth loop -->
-          <div class="why-card"><div class="why-icon">🍃</div><strong>100% Pure Tea</strong><p>No milk powder, no fillers — only authentic, high-quality tea leaves & handpicked masala</p></div>
-          <div class="why-card"><div class="why-icon">🔥</div><strong>Perfect Kadak Tapri Taste</strong><p>Traditional Amruttulya masala blend — strong color, rich aroma, just like roadside chai</p></div>
-          <div class="why-card"><div class="why-icon">₹</div><strong>High Margin, Low Cost</strong><p>Economical per cup — more profit for tea stalls, hotels, cafes & franchises</p></div>
-          <div class="why-card"><div class="why-icon">🏪</div><strong>Trusted by Professionals</strong><p>Used daily by thousands of tea vendors & businesses across Maharashtra</p></div>
-          <div class="why-card"><div class="why-icon">❤️</div><strong>Loved by Tea Lovers</strong><p>Thousands of happy customers — real boiled chai experience at home or shop</p></div>
+          <div class="why-card"><div class="why-icon">🍃</div><strong>100% Pure Tea</strong><p>No milk powder, no fillers — authentic tea leaves & handpicked masala</p></div>
+          <div class="why-card"><div class="why-icon">🔥</div><strong>Perfect Kadak Tapri Taste</strong><p>Traditional Amruttulya blend — strong color, rich aroma</p></div>
+          <div class="why-card"><div class="why-icon">₹</div><strong>High Margin, Low Cost</strong><p>Economical per cup — better profit for vendors</p></div>
+          <div class="why-card"><div class="why-icon">🏪</div><strong>Trusted by Professionals</strong><p>Used daily by thousands of tea vendors in Maharashtra</p></div>
+          <div class="why-card"><div class="why-icon">❤️</div><strong>Loved by Tea Lovers</strong><p>Real boiled chai experience at home or shop</p></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Recipe section remains unchanged -->
   <section id="recipe" class="tea-vibe-bg">
     <div class="container">
-      <h2 style="text-align:center; font-size:3.8rem; color:var(--chai-red); margin:4rem 0 2rem;">Perfect Chai Recipes with Bansuri Premix</h2>
+      <h2 style="text-align:center; font-size:3.5rem; color:var(--chai-red); margin:3.5rem 0 1.8rem;">Perfect Chai Recipes with Bansuri Premix</h2>
       
       <div class="recipe-gallery">
         <div class="recipe-item">
@@ -521,13 +507,12 @@
         </div>
       </div>
 
-      <p style="text-align:center; font-size:1.6rem; font-style:italic; margin:3rem 0; color:var(--chai-red);">
+      <p style="text-align:center; font-size:1.45rem; font-style:italic; margin:2.5rem 0; color:var(--chai-red);">
         Boil – Brew – Enjoy the real tapri experience ☕
       </p>
     </div>
   </section>
 
-  <!-- Add-ons and Wholesale sections remain unchanged -->
   <section id="addons" class="tea-vibe-bg">
     <div class="container">
       <h2 style="text-align:center; font-size:3.5rem; color:var(--chai-red); margin:4rem 0 2.5rem;">Additional Products for Your Tea Setup</h2>
@@ -646,9 +631,11 @@
     </div>
   </div>
 
+  <button class="admin-btn" onclick="document.getElementById('admin-login').style.display='flex';">🔧</button>
+
   <script>
     // ──────────────────────────────────────────────
-    //               PRODUCTS DATA – updated description
+    //               PRODUCTS DATA
     // ──────────────────────────────────────────────
 
     let products = JSON.parse(localStorage.getItem('bansuriProducts')) || [
@@ -862,7 +849,7 @@
     //                   ADMIN FUNCTIONS
     // ──────────────────────────────────────────────
 
-    const ADMIN_PASSWORD = "699166"; // ← CHANGE THIS TO YOUR OWN SECRET PASSWORD
+    const ADMIN_PASSWORD = "699166"; // CHANGE THIS TO YOUR OWN SECRET PASSWORD
 
     function saveProducts() {
       localStorage.setItem('bansuriProducts', JSON.stringify(products));
