@@ -90,7 +90,7 @@
       height: 85vh;
       min-height: 520px;
       max-height: 820px;
-      padding-top: 60px;
+      padding-top: 80px;
       overflow: hidden;
       background: var(--dark);
     }
@@ -375,10 +375,13 @@
       }
       .logo { height: 48px; margin-right: 0; }
       .hero { 
-        height: 65vh;          /* taller on tablets & phones */
-        min-height: 420px; 
-        padding-top: 50px; 
+        height: 70vh;          /* taller on tablets & phones */
+        min-height: 440px; 
+        padding-top: 120px; 
       }
+      .slide {
+  object-position: center 60%;   /* pulls image content down → less top cut-off */
+}
       #products { padding: 5rem 1rem 4rem; }
       .grid { grid-template-columns: 1fr; gap: 2rem; }
       .card img { height: 260px; padding: 15px; }
@@ -394,10 +397,11 @@
       .why-carousel-track { animation-play-state: paused; }
     }
 
-    @media (max-width: 700px) {
+    @media (max-width: 480px) {
       .hero { 
-        height: 100vh;
-        min-height: 650px;
+        height: 68vh;
+        min-height: 400px;
+        padding-top: 110px;
       }
       .hero-logo-blur { 
         width: 280px; 
@@ -978,6 +982,7 @@
 
 </body>
 </html>
+
 
 
 
