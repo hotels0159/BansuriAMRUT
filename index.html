@@ -830,9 +830,22 @@
 
       products.forEach(prod => {
         const priceHTML = typeof prod.price === 'number' 
-          ? `<span style="color:var(--chai-red); font-size:2rem; font-weight:700;">₹${prod.price}</span>`
-          : `<span style="color:var(--chai-red); font-size:1.6rem; font-weight:600;">${prod.price}</span>`;
-
+  ? `
+    <div style="text-align:center;">
+      <span style="color:var(--chai-red); font-size:2rem; font-weight:700;">₹${prod.price}</span>
+      <div style="font-size:0.95rem; color:#666; margin-top:0.4rem; font-style:italic;">
+        * FREE DELIVERY *
+      </div>
+    </div>
+  `
+  : `
+    <div style="text-align:center;">
+      <span style="color:var(--chai-red); font-size:1.6rem; font-weight:600;">${prod.price}</span>
+      <div style="font-size:0.95rem; color:#666; margin-top:0.4rem; font-style:italic;">
+        * FREE DELIVERY *
+      </div>
+    </div>
+  `;
         const buttonsHTML = `
           <div style="display: flex; flex-wrap: wrap; gap: 14px; margin-top: 1.5rem; justify-content: center;">
             <a href="#" 
@@ -965,6 +978,7 @@
 
 </body>
 </html>
+
 
 
 
