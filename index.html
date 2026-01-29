@@ -472,10 +472,9 @@ body.force-mobile .sticky-nav {
 
 /* HERO section */
 body.force-mobile .hero {
-  height: 40vh;
+  height: 65vh;
   min-height: 380px;
-  padding-top: 90px;
-}
+  }
 
 /* Stop slider animation */
 body.force-mobile .hero-slider {
@@ -503,6 +502,51 @@ body.force-mobile .btn-primary {
   font-size: 1.05rem;
   padding: 0.9rem 1.6rem;
 }
+	  /* ─────────────────────────────
+   VIEW SWITCH BUTTONS
+───────────────────────────── */
+
+.view-switch {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.mobile-toggle-btn,
+.desktop-toggle-btn {
+  border-radius: 30px;
+  padding: 0.5rem 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 0.95rem;
+  border: 2px solid var(--gold);
+}
+
+/* Mobile button */
+.mobile-toggle-btn {
+  background: #fff;
+  color: var(--chai-red);
+}
+
+/* Desktop button */
+.desktop-toggle-btn {
+  background: var(--chai-red);
+  color: white;
+}
+
+.mobile-toggle-btn:hover {
+  background: var(--gold);
+  color: #000;
+}
+
+.desktop-toggle-btn:hover {
+  background: #8c1f1f;
+}
+
+/* Hide both buttons on real mobile */
+@media (max-width: 768px) {
+  .view-switch { display: none; }
+}
+
 
   </style>
 </head>
@@ -524,6 +568,10 @@ body.force-mobile .btn-primary {
 	  <button class="mobile-toggle-btn" onclick="toggleMobileView()">
   📱 Mobile View
 </button>
+		<div class="view-switch">
+  <button class="mobile-toggle-btn" onclick="setMobileView()">📱 Mobile View</button>
+  <button class="desktop-toggle-btn" onclick="setDesktopView()">🖥 Desktop View</button>
+</div>
     </div>
   </nav>
 
@@ -1064,11 +1112,21 @@ body.force-mobile .btn-primary {
     btn.innerText = "📱 Mobile View";
   }
 }
+function setMobileView() {
+  document.body.classList.add("force-mobile");
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+function setDesktopView() {
+  document.body.classList.remove("force-mobile");
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
 
   </script>
 
 </body>
 </html>
+
 
 
 
