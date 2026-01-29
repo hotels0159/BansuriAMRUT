@@ -428,6 +428,82 @@
       .nav-links { gap: 0.6rem; }
       .nav-links a { font-size: 0.95rem; padding: 0.5rem 0.6rem; }
     }
+	/* ─────────────────────────────
+   MOBILE VIEW BUTTON
+───────────────────────────── */
+.mobile-toggle-btn {
+  background: #fff;
+  color: var(--chai-red);
+  border: 2px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 30px;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.mobile-toggle-btn:hover {
+  background: var(--gold);
+  color: #000;
+}
+
+/* Hide button on real mobile */
+@media (max-width: 768px) {
+  .mobile-toggle-btn { display: none; }
+}
+
+/* ─────────────────────────────
+   FORCED MOBILE VIEW STYLES
+───────────────────────────── */
+body.force-mobile {
+  max-width: 420px;
+  margin: 0 auto;
+  background: #fdf8f0;
+  border-left: 8px solid #eee;
+  border-right: 8px solid #eee;
+}
+
+/* Header layout */
+body.force-mobile .sticky-nav {
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 0.8rem;
+}
+
+/* HERO section */
+body.force-mobile .hero {
+  height: 65vh;
+  min-height: 380px;
+  padding-top: 90px;
+}
+
+/* Stop slider animation */
+body.force-mobile .hero-slider {
+  animation: none;
+}
+
+/* One image full width */
+body.force-mobile .slide {
+  min-width: 100%;
+}
+
+/* Remove side blur logos */
+body.force-mobile .hero-logo-left,
+body.force-mobile .hero-logo-right {
+  display: none;
+}
+
+/* Products one column */
+body.force-mobile .grid {
+  grid-template-columns: 1fr;
+}
+
+/* Button size */
+body.force-mobile .btn-primary {
+  font-size: 1.05rem;
+  padding: 0.9rem 1.6rem;
+}
+
   </style>
 </head>
 <body>
@@ -445,6 +521,9 @@
       <a href="#recipe">Recipe</a>
       <a href="#addons">More Products</a>
       <a href="#wholesale">Wholesale</a>
+	  <button class="mobile-toggle-btn" onclick="toggleMobileView()">
+  📱 Mobile View
+</button>
     </div>
   </nav>
 
@@ -974,6 +1053,18 @@
         closeEnquiryModal();
       }
     });
+	function toggleMobileView() {
+  document.body.classList.toggle("force-mobile");
+
+  const btn = document.querySelector(".mobile-toggle-btn");
+  if (document.body.classList.contains("force-mobile")) {
+    btn.innerText = "🖥 Desktop View";
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  } else {
+    btn.innerText = "📱 Mobile View";
+  }
+}
+
   </script>
 
 </body>
