@@ -107,44 +107,32 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: li.hero {
-  position: relative;
-  height: 85vh;                     /* or your preferred height */
-  min-height: 520px;
-  overflow: hidden;
-  background: var(--dark);
-}
+      background: linear-gradient(rgba(0,0,0,0.06), rgba(0,0,0,0.10));
+      z-index: 4;
+    }
 
-.hero-slider-container {
-  display: flex;
-  height: 100%;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch; /* smooth iOS scrolling */
-}
+    .hero-logo-blur {
+      position: absolute;
+      top: 50%;
+      width: 420px;
+      opacity: 0.28;
+      filter: blur(4px) drop-shadow(0 0 35px rgba(201,169,110,0.4));
+      z-index: 1;
+      pointer-events: none;
+      transform: translateY(-50%);
+    }
+    .hero-logo-left  { left: 2%; }
+    .hero-logo-right { right: 2%; }
 
-.hero-slide {
-  flex: 0 0 100%;                   /* each image takes full width */
-  height: 100%;
-  scroll-snap-align: start;
-}
-
-.hero-slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-}
-
-/* Hide scrollbar but keep functionality (optional) */
-.hero-slider-container::-webkit-scrollbar {
-  display: none;
-}
-.hero-slider-container {
-  scrollbar-width: none;          /* Firefox */
-  -ms-overflow-style: none;       /* IE/Edge */
-}
+    .slide {
+      min-width: 50%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      background: var(--dark);
+      flex-shrink: 0;
+      image-rendering: crisp-edges;
+    }
 
     @keyframes slide {
       0%    { transform: translateX(0); }
@@ -505,14 +493,16 @@ sticky-nav {
   </nav>
 
   <section class="hero" id="home">
-  <div class="hero-slider-container">
-    <div class="hero-slide"><img src="hero-chai-2.jpeg" alt="Steaming kadak chai"></div>
-    <div class="hero-slide"><img src="hero-chai-1.jpeg" alt="Bansuri tea premix"></div>
-    <div class="hero-slide"><img src="hero-chai-3.jpg" alt="Traditional tapri tea"></div>
-    <div class="hero-slide"><img src="hero-chai-4.jpeg" alt="Jaggery gudh chai"></div>
-    <div class="hero-slide"><img src="hero-chai-5.jpeg" alt="Basundi flavored chai"></div>
-    <div class="hero-slide"><img src="hero-chai-6.jpeg" alt="Jaggery gudh chai"></div>
-    <div class="hero-slide"><img src="hero-chai-7.jpeg" alt="Basundi flavored chai"></div>
+    <img src="bansuri-logo.png" class="hero-logo-blur hero-logo-left" alt="">
+    <img src="bansuri-logo.png" class="hero-logo-blur hero-logo-right" alt="">
+    <div class="hero-slider">
+      <img src="hero-chai-2.jpeg" alt="Steaming kadak chai" class="slide">
+      <img src="hero-chai-1.jpeg" alt="Bansuri tea premix" class="slide">
+      <img src="hero-chai-3.jpg" alt="Traditional tapri tea" class="slide">
+      <img src="hero-chai-4.jpeg" alt="Jaggery gudh chai" class="slide">
+      <img src="hero-chai-5.jpeg" alt="Basundi flavored chai" class="slide">
+      <img src="hero-chai-6.jpeg" alt="Jaggery gudh chai" class="slide">
+      <img src="hero-chai-7.jpeg" alt="Basundi flavored chai" class="slide">
     </div>
   </section>
 
