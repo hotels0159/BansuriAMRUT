@@ -546,6 +546,33 @@ body.force-mobile .btn-primary {
 @media (max-width: 768px) {
   .view-switch { display: none; }
 }
+/* Desktop View button — hidden normally */
+.desktop-only-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--chai-red);
+  color: white;
+  border: 2px solid var(--gold);
+  padding: 0.8rem 1.4rem;
+  border-radius: 40px;
+  font-weight: 700;
+  cursor: pointer;
+  z-index: 9999;
+  display: none; /* hidden by default */
+}
+
+/* Show ONLY when mobile preview is active */
+body.force-mobile .desktop-only-btn {
+  display: block;
+}
+
+/* Never show on real mobile phones */
+@media (max-width: 768px) {
+  .desktop-only-btn {
+    display: none !important;
+  }
+}
 
 
   </style>
@@ -1121,11 +1148,34 @@ function setDesktopView() {
   document.body.classList.remove("force-mobile");
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
+<button class="desktop-only-btn" onclick="exitMobileView()">
+  🖥 Desktop View
+</button>
+// AUTO enable mobile view via URL ?mobile=1
+(function () {
+  const params = new URLSearchParams(window.location.search);
+  if (params.get("mobile") === "1") {
+    document.body.classList.add("force-mobile");
+  }
+})();
+
+// Exit mobile view
+function exitMobileView() {
+  document.body.classList.remove("force-mobile");
+
+  // remove ?mobile=1 from URL
+  const url = new URL(window.location);
+  url.searchParams.delete("mobile");
+  window.history.replaceState({}, "", url);
+
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
 
   </script>
 
 </body>
 </html>
+
 
 
 
