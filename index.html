@@ -394,16 +394,22 @@
       .why-carousel-track { animation-play-state: paused; }
     }
 
-    @media (max-width: 480px) {
-      .hero { 
-        height: 70vh;
-        min-height: 380px;
-      }
-      .hero-logo-blur { 
-        width: 280px; 
-        opacity: 0.22; 
-      }
-      .logo { height: 44px; }
+    @media (max-width: 768px) {
+  .hero {
+    height: 70vh;             /* already have this – good */
+    min-height: 420px;
+    padding-top: 110px;       /* ← key fix: give space for stacked nav */
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    height: 75vh;             /* already have */
+    min-height: 380px;
+    padding-top: 100px;       /* a bit less aggressive if needed */
+  }
+}
+      .logo { height: 60px; }
       .nav-links a { font-size: 1rem; padding: 0.5rem 0.7rem; }
       .card img { height: 220px; padding: 12px; }
       .btn-primary { padding: 0.9rem 2rem; font-size: 1.1rem; min-height: 48px; }
@@ -978,6 +984,7 @@
 
 </body>
 </html>
+
 
 
 
