@@ -192,128 +192,22 @@
     .card img { width: 100%; height: 300px; object-fit: contain; padding: 18px; transition: transform 0.45s; }
     .card:hover img { transform: scale(1.04); }
 
-    /* MOBILE MENU STYLES */
-    .mobile-menu-panel {
+    .admin-btn {
       position: fixed;
-      inset: 0;
-      background: var(--deep-green);
+      bottom: 20px;
+      right: 20px;
+      background: var(--chai-red);
       color: white;
-      z-index: 9999;
-      transform: translateX(100%);
-      transition: transform 0.45s ease-in-out;
-      display: none;
-    }
-
-    body.force-mobile .mobile-menu-panel {
-      display: block;
-    }
-
-    .mobile-menu-panel.open {
-      transform: translateX(0);
-    }
-
-    .mobile-menu-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1.2rem 1.5rem;
-      border-bottom: 1px solid rgba(255,255,255,0.15);
-    }
-
-    .mobile-menu-close {
-      font-size: 3rem;
-      cursor: pointer;
-      color: var(--gold);
-    }
-
-    .mobile-menu-links {
-      display: flex;
-      flex-direction: column;
-      padding: 3rem 1.5rem 2rem;
-    }
-
-    .mobile-menu-links a {
-      color: white;
-      text-decoration: none;
-      font-size: 1.6rem;
-      font-weight: 600;
-      padding: 1.5rem 0;
-      border-bottom: 1px solid rgba(255,255,255,0.12);
-      transition: 0.3s;
-    }
-
-    .mobile-menu-links a:hover {
-      color: var(--gold);
-      padding-left: 1.2rem;
-    }
-
-    /* FORCED MOBILE VIEW */
-    body.force-mobile {
-      max-width: 420px;
-      margin: 0 auto;
-      background: #fdf8f0;
-      border-left: 10px solid #eee;
-      border-right: 10px solid #eee;
-    }
-
-    body.force-mobile .sticky-nav {
-      padding: 0.8rem 1rem;
-    }
-
-    body.force-mobile .nav-links a {
-      display: none;
-    }
-
-    body.force-mobile .mobile-toggle-btn {
-      display: flex !important;
-      background: var(--gold);
-      color: var(--dark);
       border: none;
-      font-size: 1.8rem;
       width: 52px;
       height: 52px;
       border-radius: 50%;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      font-size: 1.6rem;
       cursor: pointer;
+      box-shadow: 0 5px 16px rgba(165,42,42,0.45);
+      z-index: 999;
     }
 
-    body.force-mobile .hero {
-      height: 75vh;
-      min-height: 460px;
-      max-height: 680px;
-      padding-top: 70px;
-    }
-
-    body.force-mobile .hero-slider {
-      animation: none;
-    }
-
-    body.force-mobile .slide {
-      min-width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    body.force-mobile .hero-logo-left,
-    body.force-mobile .hero-logo-right {
-      display: none;
-    }
-
-    body.force-mobile .grid {
-      grid-template-columns: 1fr;
-    }
-
-    body.force-mobile #products {
-      padding: 5rem 1rem 4rem;
-    }
-
-    @media (max-width: 768px) {
-      .mobile-toggle-btn { display: none; }
-    }
-
-    /* Original why, recipe, footer, modal styles */
     .why-section { text-align: center; }
     .why-carousel-container { overflow: hidden; max-width: 100%; margin: 2rem auto 0; position: relative; padding: 1.5rem 0; }
     .why-carousel-track { display: flex; animation: slideWhy 40s linear infinite; width: max-content; }
@@ -456,6 +350,112 @@
       min-height: 52px;
     }
     #submit-enquiry:hover { background: #8c1f1f; transform: translateY(-2px); }
+
+    /* ──────────────────────────────────────────────
+       RESPONSIVE IMPROVEMENTS + CLEAN MOBILE HEADER
+    ────────────────────────────────────────────── */
+
+    @media (max-width: 768px) {
+      .sticky-nav { 
+        padding: 0.5rem 1rem;
+        min-height: 54px;
+        justify-content: center;
+        background: rgba(165,42,42,0.98);
+      }
+
+      .logo-container {
+        margin: 0 auto;
+      }
+
+      .logo {
+        height: 42px;
+        margin: 0;
+      }
+
+      /* Hide ALL navigation + toggle button on mobile */
+      .nav-links,
+      .mobile-toggle-btn {
+        display: none !important;
+      }
+
+      .hero { 
+        height: 65vh;
+        min-height: 420px;
+        padding-top: 50px; 
+      }
+      #products { padding: 5rem 1rem 4rem; }
+      .grid { grid-template-columns: 1fr; gap: 2rem; }
+      .card img { height: 260px; padding: 15px; }
+      .why-card { flex: 0 0 320px; margin: 0 1.1rem; padding: 1.8rem 1.4rem; }
+      .why-icon { font-size: 3.5rem; }
+      .recipe-item { flex: 0 0 320px; }
+      .recipe-item img { height: 460px; }
+      h2 { font-size: 2.8rem !important; margin: 3.5rem 0 2rem !important; }
+      .btn-primary { padding: 1rem 2.2rem; font-size: 1.15rem; }
+      body { padding-bottom: 100px; }
+
+      /* Pause carousel animation on mobile */
+      .why-carousel-track { animation-play-state: paused; }
+    }
+
+    @media (max-width: 480px) {
+      .hero { 
+        height: 70vh;
+        min-height: 380px;
+      }
+      .hero-logo-blur { 
+        width: 280px; 
+        opacity: 0.22; 
+      }
+      .logo { height: 38px; }
+      .card img { height: 220px; padding: 12px; }
+      .btn-primary { padding: 0.9rem 2rem; font-size: 1.1rem; min-height: 48px; }
+      h2 { font-size: 2.4rem !important; }
+      .why-card { flex: 0 0 290px; margin: 0 1rem; padding: 1.6rem 1.2rem; }
+      .why-icon { font-size: 3rem; }
+      .recipe-item { flex: 0 0 290px; }
+      .recipe-item img { height: 400px; }
+      .modal-content { padding: 1.6rem; }
+    }
+
+    /* Extra safety for very small phones (≤360px) */
+    @media (max-width: 360px) {
+      .hero { 
+        height: 75vh;
+        min-height: 340px;
+      }
+      .hero-logo-blur { width: 240px; opacity: 0.18; }
+      .card img { height: 200px; padding: 10px; }
+      h3 { font-size: 1.8rem; }
+      .btn-primary { font-size: 1rem; padding: 0.9rem 1.4rem; min-height: 44px; }
+      .sticky-nav { padding: 0.4rem 0.8rem; }
+      .logo { height: 36px; }
+    }
+
+	/* ─────────────────────────────
+   MOBILE VIEW BUTTON
+───────────────────────────── */
+.mobile-toggle-btn {
+  background: #fff;
+  color: var(--chai-red);
+  border: 2px solid var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 30px;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.mobile-toggle-btn:hover {
+  background: var(--gold);
+  color: #000;
+}
+
+/* Hide button on real mobile (already handled above, kept for reference) */
+@media (max-width: 768px) {
+  .mobile-toggle-btn { display: none; }
+}
+
   </style>
 </head>
 <body>
@@ -473,27 +473,11 @@
       <a href="#recipe">Recipe</a>
       <a href="#addons">More Products</a>
       <a href="#wholesale">Wholesale</a>
-      <button class="mobile-toggle-btn" onclick="toggleMobileView()">
-        📱 Mobile View
-      </button>
+	  <button class="mobile-toggle-btn" onclick="toggleMobileView()">
+  📱 Mobile View
+</button>
     </div>
   </nav>
-
-  <!-- Mobile Menu Panel -->
-  <div id="mobile-menu" class="mobile-menu-panel">
-    <div class="mobile-menu-header">
-      <span class="mobile-menu-close" onclick="toggleMobileMenu()">×</span>
-      <img src="bansuri-logo.png" alt="Bansuri Tea" style="height:50px;">
-    </div>
-    <div class="mobile-menu-links">
-      <a href="#home" onclick="toggleMobileMenu()">Home</a>
-      <a href="#products" onclick="toggleMobileMenu()">Products</a>
-      <a href="#why" onclick="toggleMobileMenu()">Why Choose Us</a>
-      <a href="#recipe" onclick="toggleMobileMenu()">Recipe</a>
-      <a href="#addons" onclick="toggleMobileMenu()">More Products</a>
-      <a href="#wholesale" onclick="toggleMobileMenu()">Wholesale</a>
-    </div>
-  </div>
 
   <section class="hero" id="home">
     <img src="bansuri-logo.png" class="hero-logo-blur hero-logo-left" alt="">
@@ -710,7 +694,7 @@
   </div>
 
   <div id="admin-panel">
-    <div class="inner" style="max-width:900px; width:90%; background:rgba(44,21,8,0.9); padding:2rem; border-radius:16px; border:2px solid var(--gold);">
+    <div class="inner">
       <button onclick="document.getElementById('admin-panel').style.display='none'" style="position:absolute; top:1rem; right:1.5rem; background:red; color:white; border:none; padding:0.8rem 1.5rem; border-radius:50px; cursor:pointer; font-weight:bold;">Close Admin</button>
       
       <h2 style="text-align:center; color:var(--gold); margin-bottom:2rem;">Bansuri Admin Panel (Local Changes Only)</h2>
@@ -729,8 +713,12 @@
     </div>
   </div>
 
+  
   <script>
-    // PRODUCTS DATA
+    // ──────────────────────────────────────────────
+    //               PRODUCTS DATA
+    // ──────────────────────────────────────────────
+
     let products = JSON.parse(localStorage.getItem('bansuriProducts')) || [
       {
         id: "all-in-one",
@@ -807,6 +795,7 @@
     ];
 
     const YOUR_WHATSAPP_NUMBER = "919552855040";
+
     let currentProductName = "";
 
     function openEnquiryModal(productName) {
@@ -872,22 +861,22 @@
 
       products.forEach(prod => {
         const priceHTML = typeof prod.price === 'number' 
-          ? `
-            <div style="text-align:center;">
-              <span style="color:var(--chai-red); font-size:2rem; font-weight:700;">₹${prod.price}</span>
-              <div style="font-size:0.95rem; color:#666; margin-top:0.4rem; font-style:italic;">
-                * FREE DELIVERY *
-              </div>
-            </div>
-          `
-          : `
-            <div style="text-align:center;">
-              <span style="color:var(--chai-red); font-size:1.6rem; font-weight:600;">${prod.price}</span>
-              <div style="font-size:0.95rem; color:#666; margin-top:0.4rem; font-style:italic;">
-                * FREE DELIVERY *
-              </div>
-            </div>
-          `;
+  ? `
+    <div style="text-align:center;">
+      <span style="color:var(--chai-red); font-size:2rem; font-weight:700;">₹${prod.price}</span>
+      <div style="font-size:0.95rem; color:#666; margin-top:0.4rem; font-style:italic;">
+        * FREE DELIVERY *
+      </div>
+    </div>
+  `
+  : `
+    <div style="text-align:center;">
+      <span style="color:var(--chai-red); font-size:1.6rem; font-weight:600;">${prod.price}</span>
+      <div style="font-size:0.95rem; color:#666; margin-top:0.4rem; font-style:italic;">
+        * FREE DELIVERY *
+      </div>
+    </div>
+  `;
         const buttonsHTML = `
           <div style="display: flex; flex-wrap: wrap; gap: 14px; margin-top: 1.5rem; justify-content: center;">
             <a href="#" 
@@ -931,27 +920,11 @@
       });
     }
 
-    // ─── Mobile View & Menu ───
-    function toggleMobileView() {
-      document.body.classList.toggle('force-mobile');
-      
-      const menu = document.getElementById('mobile-menu');
-      menu.classList.remove('open');
-      
-      const btn = document.querySelector('.mobile-toggle-btn');
-      if (document.body.classList.contains('force-mobile')) {
-        btn.innerHTML = '☰';
-      } else {
-        btn.innerHTML = '📱 Mobile View';
-      }
-    }
+    // ──────────────────────────────────────────────
+    //                   ADMIN FUNCTIONS
+    // ──────────────────────────────────────────────
 
-    function toggleMobileMenu() {
-      document.getElementById('mobile-menu').classList.toggle('open');
-    }
-
-    // ─── Admin Functions ───
-    const ADMIN_PASSWORD = "699166";
+    const ADMIN_PASSWORD = "699166"; // CHANGE THIS TO YOUR OWN SECRET PASSWORD
 
     function saveProducts() {
       localStorage.setItem('bansuriProducts', JSON.stringify(products));
@@ -1019,17 +992,20 @@
       }
     }
 
-    // Initialize
+    // ──────────────────────────────────────────────
+    //                   INITIALIZE
+    // ──────────────────────────────────────────────
+
     renderProducts();
 
     document.addEventListener('keydown', e => {
       if (e.key === "Escape") {
         document.getElementById('admin-panel').style.display = 'none';
         document.getElementById('admin-login').style.display = 'none';
-        document.getElementById('mobile-menu').classList.remove('open');
         closeEnquiryModal();
       }
     });
+	
   </script>
 
 </body>
