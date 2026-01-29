@@ -474,7 +474,8 @@ body.force-mobile .sticky-nav {
 body.force-mobile .hero {
   height: 65vh;
   min-height: 380px;
-  }
+  padding-top: 90px;
+}
 
 /* Stop slider animation */
 body.force-mobile .hero-slider {
@@ -502,78 +503,6 @@ body.force-mobile .btn-primary {
   font-size: 1.05rem;
   padding: 0.9rem 1.6rem;
 }
-	  /* ─────────────────────────────
-   VIEW SWITCH BUTTONS
-───────────────────────────── */
-
-.view-switch {
-  display: flex;
-  gap: 0.6rem;
-}
-
-.mobile-toggle-btn,
-.desktop-toggle-btn {
-  border-radius: 30px;
-  padding: 0.5rem 1.2rem;
-  font-weight: 700;
-  cursor: pointer;
-  font-size: 0.95rem;
-  border: 2px solid var(--gold);
-}
-
-/* Mobile button */
-.mobile-toggle-btn {
-  background: #fff;
-  color: var(--chai-red);
-}
-
-/* Desktop button */
-.desktop-toggle-btn {
-  background: var(--chai-red);
-  color: white;
-}
-
-.mobile-toggle-btn:hover {
-  background: var(--gold);
-  color: #000;
-}
-
-.desktop-toggle-btn:hover {
-  background: #8c1f1f;
-}
-
-/* Hide both buttons on real mobile */
-@media (max-width: 768px) {
-  .view-switch { display: none; }
-}
-/* Desktop View button — hidden normally */
-.desktop-only-btn {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: var(--chai-red);
-  color: white;
-  border: 2px solid var(--gold);
-  padding: 0.8rem 1.4rem;
-  border-radius: 40px;
-  font-weight: 700;
-  cursor: pointer;
-  z-index: 9999;
-  display: none; /* hidden by default */
-}
-
-/* Show ONLY when mobile preview is active */
-body.force-mobile .desktop-only-btn {
-  display: block;
-}
-
-/* Never show on real mobile phones */
-@media (max-width: 768px) {
-  .desktop-only-btn {
-    display: none !important;
-  }
-}
-
 
   </style>
 </head>
@@ -595,10 +524,6 @@ body.force-mobile .desktop-only-btn {
 	  <button class="mobile-toggle-btn" onclick="toggleMobileView()">
   📱 Mobile View
 </button>
-		<div class="view-switch">
-  <button class="mobile-toggle-btn" onclick="setMobileView()">📱 Mobile View</button>
-  <button class="desktop-toggle-btn" onclick="setDesktopView()">🖥 Desktop View</button>
-</div>
     </div>
   </nav>
 
@@ -1128,56 +1053,11 @@ body.force-mobile .desktop-only-btn {
         closeEnquiryModal();
       }
     });
-	function toggleMobileView() {
-  document.body.classList.toggle("force-mobile");
-
-  const btn = document.querySelector(".mobile-toggle-btn");
-  if (document.body.classList.contains("force-mobile")) {
-    btn.innerText = "🖥 Desktop View";
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  } else {
-    btn.innerText = "📱 Mobile View";
-  }
-}
-function setMobileView() {
-  document.body.classList.add("force-mobile");
-  window.scrollTo({ top: 0, behavior: "smooth" });
-}
-
-function setDesktopView() {
-  document.body.classList.remove("force-mobile");
-  window.scrollTo({ top: 0, behavior: "smooth" });
-}
-<button class="desktop-only-btn" onclick="exitMobileView()">
-  🖥 Desktop View
-</button>
-// AUTO enable mobile view via URL ?mobile=1
-(function () {
-  const params = new URLSearchParams(window.location.search);
-  if (params.get("mobile") === "1") {
-    document.body.classList.add("force-mobile");
-  }
-})();
-
-// Exit mobile view
-function exitMobileView() {
-  document.body.classList.remove("force-mobile");
-
-  // remove ?mobile=1 from URL
-  const url = new URL(window.location);
-  url.searchParams.delete("mobile");
-  window.history.replaceState({}, "", url);
-
-  window.scrollTo({ top: 0, behavior: "smooth" });
-}
-
+	
   </script>
 
 </body>
 </html>
-
-
-
 
 
 
