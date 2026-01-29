@@ -472,11 +472,11 @@ body.force-mobile .sticky-nav {
 
 /* HERO section */
 body.force-mobile .hero {
-  height: 55vh;
-  min-height: 320px;
-  padding-top: 100px;
+  height: 75vh;
+ min-height: 440px;
+  max-height: 680px;      /* prevents it from becoming huge on big phones */
+  padding-top: 80px;
 }
-
 /* Stop slider animation */
 body.force-mobile .hero-slider {
   animation: none;
@@ -485,8 +485,9 @@ body.force-mobile .hero-slider {
 /* One image full width */
 body.force-mobile .slide {
   min-width: 100%;
+  height: 100%;
+  object-fit: cover;      /* crops nicely without distortion */
 }
-
 /* Remove side blur logos */
 body.force-mobile .hero-logo-left,
 body.force-mobile .hero-logo-right {
@@ -1058,6 +1059,7 @@ body.force-mobile .btn-primary {
 
 </body>
 </html>
+
 
 
 
