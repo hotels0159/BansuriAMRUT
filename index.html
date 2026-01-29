@@ -83,7 +83,7 @@
     }
     .nav-links a:hover { color: var(--gold); }
 
-    section { padding: 6rem 1.2rem 4rem; }
+    section { padding: 9rem 1.2rem 4rem; }
 
     .hero {
       position: relative;
@@ -357,8 +357,8 @@
 
     @media (max-width: 768px) {
       .sticky-nav { 
-        padding: 0.5rem 1rem;
-        min-height: 54px;
+        padding: 1rem 1rem;
+        min-height: 80px;
         justify-content: center;
         background: rgba(165,42,42,0.98);
       }
@@ -368,7 +368,7 @@
       }
 
       .logo {
-        height: 42px;
+        height: 54px;
         margin: 0;
       }
 
@@ -379,9 +379,9 @@
       }
 
       .hero { 
-        height: 65vh;
-        min-height: 420px;
-        padding-top: 50px; 
+        height: 82vh;
+        min-height: 540px;
+        padding-top: 90px; 
       }
       #products { padding: 5rem 1rem 4rem; }
       .grid { grid-template-columns: 1fr; gap: 2rem; }
@@ -400,9 +400,10 @@
 
     @media (max-width: 480px) {
       .hero { 
-        height: 70vh;
-        min-height: 380px;
-      }
+    height: 85vh;                   /* even taller on small phones */
+    min-height: 500px;
+    padding-top: 85px;
+  }
       .hero-logo-blur { 
         width: 280px; 
         opacity: 0.22; 
@@ -431,7 +432,19 @@
       .sticky-nav { padding: 0.4rem 0.8rem; }
       .logo { height: 36px; }
     }
+sticky-nav {
+    min-height: 76px;
+    padding: 0.9rem 0.9rem;
+  }
 
+  .logo {
+    height: 50px;
+  }
+
+  .hero {
+    height: 88vh;
+    min-height: 480px;
+  }
 	/* ─────────────────────────────
    MOBILE VIEW BUTTON
 ───────────────────────────── */
@@ -1010,3 +1023,4 @@
 
 </body>
 </html>
+
